@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import url( 'https://fonts.googleapis.com/css?family=Helvetica:400,700|Material+Icons');
+* {
+    margin: 0px;
+    padding: 0px;
+}

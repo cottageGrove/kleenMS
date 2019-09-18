@@ -1,0 +1,23 @@
+
+<!-- <div>  
+  <button  mat-icon-button (click)="snav.toggle()" ><mat-icon>menu</mat-icon></button>
+</div>
+<span class="example-spacer"></span> -->
+<app-search></app-search>
+
+<mat-sidenav-container class="side-nav" fullscreen [hasBackdrop]="false">
+  <mat-sidenav #snav opened fixedTopGap="56" mode="side" >
+    <mat-nav-list>
+      <a mat-list-item routerLink="home">Home</a>
+      <a mat-list-item routerLink="orders"><span matBadge="{{totalOrders}}" matBadgeOverlap="false">Orders</span></a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
+
+

@@ -1,0 +1,31 @@
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+
+mat-sidenav {
+    width: 200px;
+}
+
+/* mat-sidenav-content {
+    height: 900px;
+} */
+
+.mat-badge-content {
+    width: auto;
+    display: grid;
+    min-width: 25px;
+    min-height: 22px;
+    text-align: center;
+    align-items: center;
+    padding: 5px 3px;
+    top: -19px !important;
+    right: -32px !important;
+}
+
+.side-nav {
+    top: 50px !important;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+

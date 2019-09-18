@@ -1,0 +1,24 @@
+<mat-toolbar>
+    <span class="example-spacer"></span>
+    <mat-form-field style="margin-right: 70px;">
+
+
+            <div class="inner-element">
+                <input matInput
+                      [(ngModel)]= "searchParam">
+            </div>
+
+
+            <div class="inner-element">
+                <button matSuffix mat-icon-button>
+                    <mat-icon class="search-icon" (click)="onSearch()">search</mat-icon>
+                </button>
+            </div>
+
+            <div class="inner-element">
+                <button mat-icon-button matPrefix (click)="onClear()">
+                    <mat-icon class="clear-icon" >clear</mat-icon>
+                </button>
+            </div>
+    </mat-form-field>
+</mat-toolbar>

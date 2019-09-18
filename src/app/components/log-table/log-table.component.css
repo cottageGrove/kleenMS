@@ -1,0 +1,33 @@
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+th.mat-header-cell {
+    padding-right: 14px;
+}
+
+td.mat-cell {
+    padding-right: 30px;
+    padding-top: 14px;
+    padding-bottom: 10px;
+}
+tr.mat-header-row {
+    background-color: white;
+}
+
+.table-container {
+    max-height: calc(96vh - 85px);
+    /* ; // or height:calc(100vh - 155px); depending on your need  change */
+    overflow: auto;
+}
+
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-infix  {
+    padding: 1.4375em 0 !important;
+}
+
+.mat-icon-button {
+    width: 37px;
+    height: 37px;
+}
+
+::ng-deep .mat-paginator-range-label {
+    margin-top: 6px !important;
+}
