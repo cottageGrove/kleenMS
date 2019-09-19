@@ -18,7 +18,11 @@ tr.mat-header-row {
 }
 
 .table-container {
-    max-height: calc(87vh - 57px);
+    /* height: 785px; */
+    /* max-height: calc(87vh - 57px); */
+
+    min-height: calc(89vh - 75px);
+    height: calc(89vh - 75px);
     /* ; // or height:calc(100vh - 155px); depending on your need  change */
     overflow: auto;
 }

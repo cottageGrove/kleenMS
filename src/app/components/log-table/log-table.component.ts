@@ -15,10 +15,10 @@ import {animate, style, transition, trigger, state } from "@angular/animations";
         state('large', style({width: '100%'})),
         state('small', style({width: '70%' })),
         transition('large <=> small', [
-            animate('1s ease-in-out')
+            animate('0.5s ease-in-out')
         ]),
         transition('small <=> large', [
-            animate('1s ease-in-out')
+            animate('0.5s ease-in-out')
         ])
     ])
 ]
