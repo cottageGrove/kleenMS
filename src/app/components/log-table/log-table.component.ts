@@ -1,14 +1,27 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, OnChanges, Input, ElementRef, HostBinding } from '@angular/core';
 import { ApiService } from 'src/app/service/ApiService';
 import { MatTableDataSource, MatPaginator, MatTable } from '@angular/material';
 import { Order } from 'src/app/model/Order';
 import { LogService } from 'src/app/service/LogService';
 import { FilterService } from 'src/app/service/FilterService';
+import {animate, style, transition, trigger, state } from "@angular/animations";
 
 @Component({
   selector: 'app-log-table',
   templateUrl: './log-table.component.html',
-  styleUrls: ['./log-table.component.css']
+  styleUrls: ['./log-table.component.css'],
+  animations: [
+    trigger('expand', [
+        state('large', style({width: '100%'})),
+        state('small', style({width: '70%' })),
+        transition('large <=> small', [
+            animate('1s ease-in-out')
+        ]),
+        transition('small <=> large', [
+            animate('1s ease-in-out')
+        ])
+    ])
+]
 })
 export class LogTableComponent implements OnInit {
 
@@ -17,10 +30,11 @@ export class LogTableComponent implements OnInit {
   columns: string[] = ['id', 'pickupDate', 'dropoffDate', 'deliveryTime', 'totalCost', 'baskets', 'washType', 'detergent']
   dataSource: MatTableDataSource<Order>
   totalOrders: number
+  large: boolean = true
 
   orders: Order[]
 
-  constructor(private API : ApiService, private LogService: LogService, private FilterService: FilterService) { }
+  constructor( private API : ApiService, private LogService: LogService, private FilterService: FilterService) { }
 
   ngOnInit() {
 
@@ -70,6 +84,16 @@ export class LogTableComponent implements OnInit {
   filterOrders(orders: Order[], key: string) {
     if (orders) {
       return orders.filter(order => order.id.substring(0,8) == key)
+    }
+  }
+
+  edit() {
+    console.log("trying to resize")
+
+    if (this.large) {
+      this.large = false;
+    } else {
+      this.large = true;
     }
   }
 

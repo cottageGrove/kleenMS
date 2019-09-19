@@ -1,5 +1,9 @@
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 
+:host{
+    display:block;
+}
+
 th.mat-header-cell {
     padding-right: 14px;
 }
@@ -14,7 +18,7 @@ tr.mat-header-row {
 }
 
 .table-container {
-    max-height: calc(96vh - 85px);
+    max-height: calc(87vh - 57px);
     /* ; // or height:calc(100vh - 155px); depending on your need  change */
     overflow: auto;
 }
@@ -31,3 +35,28 @@ tr.mat-header-row {
 ::ng-deep .mat-paginator-range-label {
     margin-top: 6px !important;
 }
+
+/* .large {
+    width: 100%;
+}
+
+.small {
+    width: 70%;
+} */
+
+.edit-btn {
+    background-color: rgb(113, 145, 238);
+    color: white;
+}
+
+td.mat-cell {
+    height: 50px !important;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+/* .table-row {
+    height: 30px !important;
+} */
