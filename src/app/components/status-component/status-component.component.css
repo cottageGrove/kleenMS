@@ -1,0 +1,22 @@
+
+
+.title {
+    font-family: 'Helvetica Neue';
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(50, 77, 158);
+    padding-top: 20px;
+    /* float: left;  */
+    white-space: nowrap;
+}
+
+.sub-title {
+
+    font-family: 'Helvetica Neue';
+    font-size: 15px;
+    color: royalblue;
+    padding-top: 20px;
+    /* float: left;  */
+    white-space: nowrap;
+
+}

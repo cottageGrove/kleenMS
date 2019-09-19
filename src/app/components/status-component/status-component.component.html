@@ -1,0 +1,40 @@
+
+<div style="white-space: nowrap;
+            font-family: 'Helvetica Neue';
+            font-size: 20px;">
+
+    <div class="title" >
+        Order ID {{this.order?.id.substring(0,8)}}
+    </div>
+
+    <div class="sub-title">
+        Pickup Date <span style="color:grey;">{{this.order?.pickupDate}}</span>
+    </div>
+
+    <div class="sub-title">
+        Dropoff Date <span style="color: grey;">{{this.order?.dropoffDate}} </span>
+    </div>
+    <div class="sub-title">
+        Delivery Time <span style="color: grey;"> {{this.order?.deliveryTime}} </span> 
+    </div>
+    <div class="sub-title">
+        Total <span style="color: grey;">${{this.order?.totalCost}} </span>
+    </div>
+    <div>
+        <div class ="title">
+            Update Status
+        </div>
+
+        <div style="height: 20px;">
+
+        </div>
+        <button mat-button *ngFor="let item of orderStatus" style="display: block;" >
+                {{item}}
+        </button>
+    </div>
+
+
+
+
+</div>
+

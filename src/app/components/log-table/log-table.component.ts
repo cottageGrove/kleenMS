@@ -13,14 +13,36 @@ import {animate, style, transition, trigger, state } from "@angular/animations";
   animations: [
     trigger('expand', [
         state('large', style({width: '100%'})),
-        state('small', style({width: '70%' })),
+        state('small', style({width: '100%' })),
         transition('large <=> small', [
             animate('0.5s ease-in-out')
         ]),
         transition('small <=> large', [
             animate('0.5s ease-in-out')
         ])
-    ])
+    ]),
+    trigger('expandContainer', [
+      state('large', style({width: '100%'})),
+      state('small', style({width: '70%' })),
+      transition('large <=> small', [
+          animate('0.5s ease-in-out')
+      ]),
+      transition('small <=> large', [
+          animate('0.5s esase-in-out')
+      ])
+    ]),
+
+    trigger('expandDetail', [
+      state('large', style({width: '0%'})),
+      state('small', style({width: '29%'})),
+      transition('large <=> small', [
+          animate('0.5s ease-in-out')
+      ]),
+      transition('small <=> large', [
+          animate('0.5s ease-in-out')
+      ])
+  ])
+
 ]
 })
 export class LogTableComponent implements OnInit {
@@ -32,6 +54,8 @@ export class LogTableComponent implements OnInit {
   totalOrders: number
   large: boolean = true
 
+
+  order: Order 
   orders: Order[]
 
   constructor( private API : ApiService, private LogService: LogService, private FilterService: FilterService) { }
@@ -95,6 +119,10 @@ export class LogTableComponent implements OnInit {
     } else {
       this.large = true;
     }
+  }
+
+  onRowClick(row) {
+    this.order = row
   }
 
 }

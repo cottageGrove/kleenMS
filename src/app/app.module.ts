@@ -21,6 +21,7 @@ import { SearchComponent } from './components/search/search.component';
 import { DragDropModule } from '@angular/cdk/drag-drop'
 import { FormsModule } from '@angular/forms';
 import { FilterService } from './service/FilterService';
+import { StatusComponentComponent } from './components/status-component/status-component.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { FilterService } from './service/FilterService';
     MainComponent,
     LogTableComponent,
     HomeComponent,
-    SearchComponent
+    SearchComponent,
+    StatusComponentComponent
   ],
   imports: [
     BrowserModule,

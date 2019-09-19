@@ -1,4 +1,5 @@
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import url( 'https://fonts.googleapis.com/css?family=Helvetica:400,700|Material+Icons');
 
 :host{
     display:block;
@@ -17,12 +18,39 @@ tr.mat-header-row {
     background-color: white;
 }
 
+.container {
+    display: flex;
+    overflow: auto;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.item {
+    width: 100%;
+}
+
+tr.table-row{
+    cursor: pointer;
+}
+
+/* .item-2 {
+    width: 0%;
+    background-color: yellow;
+    height: 100%;
+
+} */
+
+/* .item:nth-child(2n) {
+    width: 30%;
+} */
+
 .table-container {
     /* height: 785px; */
     /* max-height: calc(87vh - 57px); */
-
     min-height: calc(89vh - 75px);
-    height: calc(89vh - 75px);
+    width: 100%;
+    max-height: calc(89vh - 75px);
+    /* height: calc(89vh - 75px); */
     /* ; // or height:calc(100vh - 155px); depending on your need  change */
     overflow: auto;
 }
@@ -61,6 +89,33 @@ td.mat-cell {
     flex: 1 1 auto;
 }
 
+.item {
+    width: 100%;
+}
+
+/* .item-2 {
+    width: 30%;
+    /* flex-direction: row-reverse; */
+    /* overflow-x: hidden;
+    overflow-y: auto;
+    display: inline-block;
+    height:100%;
+    min-height:100%;
+} */ 
+
+.item-2 {
+  padding-left: 2%;
+  width: 20%;
+  overflow-y:auto;
+  /* height: 100vh;  */
+  height: 81vh;
+}
+
+.table-block {
+    height: 100%; 
+    overflow:hidden; 
+    width: 98%;
+}
 /* .table-row {
     height: 30px !important;
 } */
