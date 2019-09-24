@@ -19,6 +19,7 @@ mat-sidenav {
     padding: 5px 3px;
     top: -19px !important;
     right: -32px !important;
+    background-color: royalblue;
 }
 
 .side-nav {

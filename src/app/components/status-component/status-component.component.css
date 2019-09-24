@@ -6,6 +6,8 @@
     font-weight: bold;
     color: rgb(50, 77, 158);
     padding-top: 20px;
+    padding: 10px;
+    background-color: white;
     /* float: left;  */
     white-space: nowrap;
 }
@@ -18,5 +20,21 @@
     padding-top: 20px;
     /* float: left;  */
     white-space: nowrap;
+    padding:10px;
 
+}
+
+.selected {
+    background-color: royalblue;
+    color: white;
+    left: 0px;
+}
+
+.unselected {
+    background-color: coral;
+}
+
+.newSelection {
+    background-color: #5bccc5;
+    color: white;
 }

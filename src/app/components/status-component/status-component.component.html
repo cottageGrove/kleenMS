@@ -25,11 +25,20 @@
             Update Status
         </div>
 
-        <div style="height: 20px;">
+        <div style="height: 10px;">
 
         </div>
-        <button mat-button *ngFor="let item of orderStatus" style="display: block;" >
-                {{item}}
+
+        <div  >
+        <button mat-button *ngFor="let item of orderStatus" style="display: block; left: 20px;" 
+                          [ngClass]="{
+                                        'selected' : item.status === 'not started',
+                                        'unselected': item.status === '',
+                                        'newSelection' : item?.isPressed
+                                     }"
+                          (click)="toggleColor(item)" 
+                          [@selectStatus]="item?.isPressed ? 'left' : 'right' ">
+                {{item.status}}
         </button>
     </div>
 

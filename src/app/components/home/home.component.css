@@ -43,13 +43,22 @@
 
   .item {
       width: 48%;
-      height: 100px;
+      height: 100%;
       margin-bottom: 2%;
-      background-color: lightblue;
   }
 
   .item:nth-child(3n) {
       width: 100%;
+  }
+
+  .chartWrapper {
+    /* position: relative; */
+    overflow-x: scroll;
+  }
+
+  .chartAreaWrapper {
+    width: 2000px;
+    overflow-x: scroll;
   }
 
   @media screen and (max-width: 480px) {

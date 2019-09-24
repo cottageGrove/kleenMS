@@ -5,6 +5,8 @@ import { Order } from 'src/app/model/Order';
 import { LogService } from 'src/app/service/LogService';
 import { FilterService } from 'src/app/service/FilterService';
 import {animate, style, transition, trigger, state } from "@angular/animations";
+import { Laundry } from 'src/app/model/Laundry';
+import { sample } from 'rxjs/operators';
 
 @Component({
   selector: 'app-log-table',
@@ -53,6 +55,7 @@ export class LogTableComponent implements OnInit {
   dataSource: MatTableDataSource<Order>
   totalOrders: number
   large: boolean = true
+  rowSelected: boolean = true 
 
 
   order: Order 
@@ -63,15 +66,34 @@ export class LogTableComponent implements OnInit {
   ngOnInit() {
 
     this.API.getOrders().subscribe(res => {
+
       console.log(res)
-      
       this.orders = res
       this.dataSource = new MatTableDataSource<Order>(res)
+
       this.dataSource.connect()
       this.dataSource.paginator = this.paginator
 
       this.emitOrderLength()
     })
+
+    // let laundryData = new Laundry(1, "cold", "tide")
+    // let sampleData = new Order('1234', 
+    //                            'today',
+    //                            'tomorrow', 
+    //                            'yesterday', 
+    //                            '14', 
+    //                            laundryData)
+
+    // let sampleData2 = new Order('3456', 
+    //                         'yesteryear',
+    //                         '11/23/53', 
+    //                         '/2015', 
+    //                         '5000', 
+    //                         laundryData)
+
+    // this.orders = new Array(sampleData, sampleData2)
+    
 
     this.activateFilterService()
 
@@ -116,13 +138,28 @@ export class LogTableComponent implements OnInit {
 
     if (this.large) {
       this.large = false;
+
+
     } else {
       this.large = true;
     }
   }
 
+
   onRowClick(row) {
     this.order = row
+
+    // if (isRowSelected) {
+    //   this.large = true
+    // }
+    // if (this.rowSelected) {
+    //   this.rowSelected = true
+
+    // } else {
+    //   this.rowSelected = false
+    //   // this.edit()
+    // }
+
   }
 
 }

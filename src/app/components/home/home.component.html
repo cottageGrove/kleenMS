@@ -1,11 +1,22 @@
-<p>home works!</p>
+<!-- <p>home works!</p> -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script> 
+
+
+<div>
+
+ 
+</div>
+
+
 
 <!-- <div class="example-box" cdkDrag cdkDropList>
     Drag me around 
 </div> -->
 
 
-<mat-toolbar>
+<!-- <mat-toolbar>
     <button mat-button (click)="isSelected()"></button>
 </mat-toolbar>
 
@@ -14,7 +25,13 @@
 </app-log-table> -->
 <div class="container">
     <div class="item">
-        div 1
+        <div class="chartWrapper">
+                <div class="chartAreaWrapper">
+                        <canvas #lineChart >{{ chart }}</canvas>
+                </div>
+
+        </div>
+
     </div>
     <div class="item">
         div 2
@@ -23,7 +40,7 @@
         div 3
     </div>
     
-</div>
+</div> 
 
 
 

@@ -23,6 +23,8 @@ import { FormsModule } from '@angular/forms';
 import { FilterService } from './service/FilterService';
 import { StatusComponentComponent } from './components/status-component/status-component.component';
 
+import { ChartsModule } from 'chart.js'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -83,7 +85,7 @@ import { StatusComponentComponent } from './components/status-component/status-c
     PortalModule,
     ScrollingModule,
     DragDropModule,
-    FormsModule
+    FormsModule,
 
   ],
   providers: [ApiService, LogService, FilterService],
