@@ -38,3 +38,20 @@
     background-color: #5bccc5;
     color: white;
 }
+
+.save-btn {
+    background-color: #7191ee;
+    color: white;
+    display: block;
+    margin-bottom: 10px;
+    margin-top: 93px;
+    right: 10px;
+    margin-right: 8px;
+    margin-left: 10px;
+    bottom: 20px;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+

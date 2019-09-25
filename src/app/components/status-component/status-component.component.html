@@ -1,9 +1,4 @@
-
-<div style="white-space: nowrap;
-            font-family: 'Helvetica Neue';
-            font-size: 20px;">
-
-    <div class="title" >
+    <div class="title">
         Order ID {{this.order?.id.substring(0,8)}}
     </div>
 
@@ -15,35 +10,39 @@
         Dropoff Date <span style="color: grey;">{{this.order?.dropoffDate}} </span>
     </div>
     <div class="sub-title">
-        Delivery Time <span style="color: grey;"> {{this.order?.deliveryTime}} </span> 
+        Delivery Time <span style="color: grey;"> {{this.order?.deliveryTime}} </span>
     </div>
     <div class="sub-title">
         Total <span style="color: grey;">${{this.order?.totalCost}} </span>
     </div>
     <div>
-        <div class ="title">
+        <div class="title">
             Update Status
         </div>
 
         <div style="height: 10px;">
 
         </div>
-
-        <div  >
-        <button mat-button *ngFor="let item of orderStatus" style="display: block; left: 20px;" 
-                          [ngClass]="{
-                                        'selected' : item.status === 'not started',
+        <div>
+                <!-- [@selectStatus]="item?.isPressed ? 'left' : 'right' " -->
+            <button mat-button *ngFor="let item of orderStatus" style="display: block; left: 20px;" [ngClass]="{
+                                        'selected' : item.status === order?.status,
                                         'unselected': item.status === '',
                                         'newSelection' : item?.isPressed
-                                     }"
-                          (click)="toggleColor(item)" 
-                          [@selectStatus]="item?.isPressed ? 'left' : 'right' ">
+                                    }" (click)="toggleColor(item)">
                 {{item.status}}
-        </button>
+            </button>
+        </div>
+        <div style="flex-wrap: wrap-reverse;">
+            <div style=" bottom: 0; right: 0;  display: flex; ">
+                    <!-- [@selectStatusPane]="isEditPaneOpen ? 'left' : 'right' " -->
+                <span class="example-spacer"></span>
+                <button mat-button class="save-btn"
+
+                    (click)="saveStatus()">
+                    Save
+                </button>
+            </div>
+          
+        </div>
     </div>
-
-
-
-
-</div>
-

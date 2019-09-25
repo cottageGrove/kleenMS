@@ -51,7 +51,7 @@ export class LogTableComponent implements OnInit {
 
 
   @ViewChild(MatPaginator, {static: false}) paginator: MatPaginator
-  columns: string[] = ['id', 'pickupDate', 'dropoffDate', 'deliveryTime', 'totalCost', 'baskets', 'washType', 'detergent']
+  columns: string[] = ['id', 'pickupDate', 'dropoffDate', 'deliveryTime', 'totalCost', 'status', 'baskets', 'washType', 'detergent']
   dataSource: MatTableDataSource<Order>
   totalOrders: number
   large: boolean = true
@@ -138,10 +138,12 @@ export class LogTableComponent implements OnInit {
 
     if (this.large) {
       this.large = false;
-
+      this.LogService.emitEditChange(true)
 
     } else {
       this.large = true;
+
+      this.LogService.emitEditChange(false)
     }
   }
 

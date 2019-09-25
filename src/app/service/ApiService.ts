@@ -14,8 +14,17 @@ export class ApiService {
         return this.http.get<Order[]>("http://localhost:3000/graphOrders").pipe(
             map(res => {
                 return res.map(order => {
-                    return new Order(order.id, order.pickupDate,order.dropoffDate,order.deliveryTime,order.totalCost,order.laundry)
+                    return new Order(order.id, order.pickupDate,order.dropoffDate,order.deliveryTime,order.totalCost, order.status, order.laundry)
                 })
         }))
+    }
+
+    updateOrder(order: Order): Observable<Order> {
+        return this.http.post<Order>("http://localhost:3000/graphOrder", order).pipe(
+            map(order => {
+                return new Order(order.id, order.pickupDate, order.dropoffDate, order.deliveryTime, order.totalCost, order.status, order.laundry)
+                
+            } )
+        )
     }
 }
